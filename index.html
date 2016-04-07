@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fundasoft</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+	<script src="bower_components/page/page.js"></script>
+	<link rel="stylesheet" href="css/css.css">
+	<link rel="import" href="css/css.html">
+	<link rel="import" href="elements.html">
+
+</head>
+<body class="fullbleed layout vertical">
+
+<paper-drawer-panel responsive-width="900px">
+	<paper-header-panel drawer>
+	    <paper-toolbar id="drawer-toolbar">
+			<img src="img/logo.png" class="logo" id="logo-drawer"><div class="letra-fundasoft" id="letra-drawer">Fundasoft</div>
+		</paper-toolbar>
+	    <div class="menu">
+	    <paper-menu>
+	      <a href="./"><paper-item><iron-icon icon="icons:home" class="blue"></iron-icon> Inicio</paper-item></a>
+          <a href="./noticias"><paper-item><iron-icon icon="icons:star" class="yellow"></iron-icon> Noticias</paper-item></a>
+          <paper-item><iron-icon icon="maps:local-see" class="green"></iron-icon> Galeria</paper-item>
+          <paper-submenu>
+            <paper-item class="menu-trigger"><iron-icon icon="social:group" class="orange"></iron-icon> Nosotros</paper-item>
+            <paper-menu class="menu-content sublist">
+                <paper-item> La fundacion</paper-item>
+        		<paper-item> Equipo</paper-item>
+        		<paper-item> Miembros</paper-item>
+        		<paper-item> Mentores</paper-item>
+          </paper-submenu>
+          <paper-submenu>
+            <paper-item class="menu-trigger"><iron-icon icon="icons:favorite" class="red"></iron-icon> Actividad</paper-item>
+            <paper-menu class="menu-content sublist">
+                <a href="./cursos"><paper-item> Cursos</paper-item></a>
+        		<paper-item> Eventos</paper-item>
+        		<paper-item> Proyectos</paper-item>
+        		<paper-item> Charlas</paper-item>
+          </paper-submenu>
+          <paper-item><iron-icon icon="icons:mail" class="purple"></iron-icon> Contacto</paper-item>
+        </paper-menu>
+	    </div>
+  	</paper-header-panel>
+
+	<paper-header-panel mode="seamed" main>
+
+	<paper-toolbar id="main-toolbar">
+		<paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+		<img src="img/logo.png" class="logo" id="logo-main"><div class="letra-fundasoft" id="letra-main">Fundasoft</div>
+	</paper-toolbar>
+  	
+	<div class="content">
+		<template id="pages" is="dom-bind">
+	    	<neon-animated-pages class="flex" selected="{{route}}" attr-for-selected="data-route">
+		  		<f-inicio data-route="inicio"></f-inicio>
+		  		<f-cursos data-route="cursos"></f-cursos>
+		  		<f-noticias data-route="noticias"></f-noticias>
+			</neon-animated-pages>
+		</template>
+	</div>
+
+	</paper-header-panel>
+</paper-drawer-panel>
+
+<script>
+	function interfaceChanger(){
+		if(!document.querySelector('paper-drawer-panel').narrow){
+			document.getElementById('main-toolbar').style.display = 'none';
+			document.getElementById('logo-drawer').style.display = 'block';
+			document.getElementById('letra-drawer').style.display = 'block';
+		} else{
+			document.getElementById('main-toolbar').style.display = 'block';
+			document.getElementById('logo-drawer').style.display = 'none';
+			document.getElementById('letra-drawer').style.display = 'none';
+		}
+	}
+
+	(function() {
+		interfaceChanger();
+	})();
+
+	window.onresize = interfaceChanger;
+
+	function scrollHandler(){
+		var scroll = document.getElementById('mainContainer').scrollTop;
+        document.querySelector('paper-toolbar').style.backgroundColor = "rgba(44,62,80,"+(scroll*0.002)+")";
+	}
+
+	var pages = document.getElementById('pages');
+
+	page('/', function(){
+		document.getElementById('mainContainer').addEventListener('scroll', scrollHandler);
+		pages.route = 'inicio';
+	});
+
+	page('/cursos', function(){
+		pages.route = 'cursos';
+		document.getElementById('mainContainer').removeEventListener('scroll', scrollHandler);
+		document.getElementById('main-toolbar').style.backgroundColor = "rgba(44,62,80,1)";
+
+	});
+
+	page('/noticias', function(){
+		pages.route = 'noticias';
+		document.getElementById('mainContainer').removeEventListener('scroll', scrollHandler);
+		document.getElementById('main-toolbar').style.backgroundColor = "rgba(44,62,80,1)";
+	});
+
+	page('/curriculum/:user', function(data){
+		console.log(data.params);
+	});
+
+	page({hashbang:true});
+
+</script>
+</body>
+
+</html>

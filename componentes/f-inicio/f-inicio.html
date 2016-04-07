@@ -1,0 +1,377 @@
+<dom-module id="f-inicio">
+	
+	<template>
+
+	<style>
+		.imagen-grande-inicio{
+			position: relative;
+			background-image: url(img/eze.jpg);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			display: block;
+			top: 0;
+			left: 0;
+			right: 0;
+			width: 100%;
+		}
+
+		.difusor{
+			position: relative;
+			z-index: 0;
+			background-color: rgba(0,0,0,0.3);
+			top: 0;
+			left: 0;
+			right: 0;
+			width: 100%;
+		}
+
+		.slogan{
+			position: absolute;
+			width: 80%;
+			text-align: center;
+  			top: 50%; 
+  			left: 50%;
+  			transform: translate(-50%,-50%);
+			margin: 0 auto;
+		}
+
+		.pri{
+			font-family: old-sans;
+			font-size: 8vw;
+			color: white;
+		}
+
+		.seg{
+			font-family: gravity;
+			font-size: 4vw;
+			color: white;
+		}
+
+		.quienes-somos-inicio{
+			display: block;
+			padding: 2% 4% 2% 4%;
+		}
+
+		.pilares-inicio{
+			display: block;
+			color: white;
+			background-color: #34495e;
+			padding: 2%;
+		}
+
+		.pilares-inicio .pilares-contenedor{
+			width: 90%;
+			margin: 0 auto;
+			@apply(--layout-horizontal);
+      		@apply(--layout-justified);
+		}
+
+		.pilar{
+			position: relative;
+			display: block;
+			text-align: center;
+			border-radius: 5px;
+			margin: 10px;
+			padding: 10px 20px 10px 20px;
+			width: 310px;
+		}
+
+		.pilar .imagen{
+			padding: 2px;
+		}
+
+		.pilar .imagen img{
+			height: 190px;
+		}
+
+		.pilar .texto .titulo{
+			font-size: 20px;
+			padding: 0 0 5px 0;
+			font-family: 'designosaur-regular';
+			font-weight: bold;
+		}
+
+		.pilar .texto p{
+			font-size: 18px;
+		}
+
+		.conocenos-inicio{
+			display: block;
+			position: relative;
+			background-image: url(img/grupo.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			height: 750px;
+		}
+
+		.difusor-conocenos{
+			position: relative;
+			z-index: 0;
+			background-color: rgba(0,0,0,0.3);
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 750px;
+			width: 100%;
+		}
+
+		.frase{
+			font-family: Actually;
+			font-size: 130px;
+			font-weight: bold;
+			padding-top: 290px;
+			width: 100%;
+			color: #fff;
+			text-align: center;
+		}
+
+		.contenedor-boton{
+			text-align: center;
+			position: relative;
+			display: block;
+			width: 100%;
+		}
+
+		.contacto{
+			display: block;
+			position: relative;
+			height: auto;
+			padding: 0 0 2% 0;
+		}
+
+		.titulo{
+			font-family: 'designosaur-regular';
+			font-size: 40px;
+			font-weight: bold;
+			text-transform: uppercase;
+			padding: 0 0 20px 0;
+			text-align: center;
+		}
+
+		.especial{
+			position: absolute !important;
+			z-index: 1;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			color: white !important;
+			background-color: rgba(0,0,0,0.15);
+			display: block;
+			width: 100%;
+			margin: 0 auto;
+		}
+
+		.texto{
+			position: relative;
+			display: block;
+			font-size: 23px;
+			width: 100%;
+		}
+
+		google-map {
+    		height: 600px;
+    		width: 100%;
+  		}
+
+		.mapa-contacto{
+			height: 600px;
+			width: 100%;
+			margin-bottom: 2%;
+		}
+
+		.formulario-contacto{
+			position: relative;
+			padding: 10px;
+			margin: 0 auto;
+			width: 60%;
+		}
+
+		#nombre-contacto{
+			position: relative;
+			width: 30%;
+		}
+
+		#mail-contacto{
+			position: relative;
+			width: 30%;
+		}
+
+		.botonera{
+			position: relative;
+			padding-top: 10px;
+			width: 100%;
+			text-align: right;
+		}
+
+		paper-button{
+			font-size: 16px;
+			background: #2196F3;
+			color: white;
+		}
+
+		.footer{
+			position: relative;
+			background-color: #34495e;
+			height: 250px;
+			width: 100%;
+		}
+
+		@media only screen and (max-width: 1100px) {
+			.pilar .imagen img{
+				height: 120px;
+			}
+
+			.pilares-inicio .pilares-contenedor{
+				width: 100%;
+			}
+
+			.formulario-contacto{
+				width: 70%;
+			}
+		}
+
+		@media only screen and (max-width: 900px) {
+			.pri{
+				font-size: 13vw;
+			}
+
+			.seg{
+				font-size: 9vw;
+			}
+
+			.pilar .imagen img{
+				height: 130px;
+			}
+
+			.formulario-contacto{
+				width: 80%;
+			}
+		}
+
+		@media only screen and (max-width: 700px) {
+
+			.pilar .imagen img{
+				height: 175px;
+			}
+
+			.pilares-inicio .pilares-contenedor{
+				max-width: 340px;
+				margin: 0 auto;
+				@apply(--layout-vertical);
+			}
+
+			.formulario-contacto{
+				width: 95%;
+			}
+		}
+
+	</style>
+
+  		<div class="imagen-grande-inicio" id="presentacion">
+	  		<div class="difusor" id="difusor">
+	  			<div class="slogan">
+	  				<div class="pri">AYUDANDO</div>
+	  				<div class="seg">[A|LAS|BUENAS|CAUSAS]</div>
+	  			</div>
+	  		</div>
+  		</div>
+		<div class="quienes-somos-inicio">
+			<div class="titulo">QUE HACEMOS</div>
+			<div class="texto">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+			</div>
+		</div>
+		<div class="pilares-inicio">
+			<div class="titulo">NUESTROS PILARES</div>
+			<div class="pilares-contenedor">
+				<div class="pilar">
+					<div class="imagen">
+						<img class="sye" src="img/electronica.png" />
+					</div>
+					<div class="texto">
+						<div class="titulo">Áreas</div>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor.
+						</p>
+					</div>
+				</div>
+				<div class="pilar">
+					<div class="imagen">
+						<img class="capacitacion" src="img/capacitacion.png" />
+					</div>
+					<div class="texto">
+						<div class="titulo">Capacitación</div>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor.						</p>
+					</div>
+				</div>
+				<div class="pilar">
+					<div class="imagen">
+						<img class="apoyo" src="img/apoyo.png" />
+					</div>
+					<div class="texto">
+						<div class="titulo">Apoyo</div>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="conocenos-inicio">
+			<div class="difusor-conocenos">
+				<div class="frase">sumate</div>
+			</div>
+		</div>
+
+		<div class="contacto">
+			<div class="texto">
+				<div class="mapa-contacto">
+					<google-map latitude="37.77493" longitude="-122.41942" disable-zoom></google-map>
+				</div>
+				<div class="formulario-contacto">
+					<div class="titulo">CONTACTO</div>
+					<paper-input label="Nombre" id="nombre-contacto"></paper-input>
+					<paper-input label="E-mail" id="mail-contacto"></paper-input>
+					<paper-textarea label="Mensaje" id="mensaje-contacto"></paper-textarea>
+					<div class="botonera">
+						<paper-button raised>ENVIAR</paper-button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer" id="footer">hi</div>
+
+	</template>
+
+	<script>
+		Polymer({
+			is:'f-inicio',
+
+			ready: function(){
+				var height = window.innerHeight
+				this.$.presentacion.style.height = (height+65) + "px";
+				this.$.difusor.style.height = (height+65) + "px";
+			}
+		});
+	</script>
+
+</dom-module>

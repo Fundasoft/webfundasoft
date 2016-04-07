@@ -1,0 +1,48 @@
+<dom-module id="f-cursos">
+	
+	<template>
+
+	<style>
+
+		.contenedor-cursos{
+			display: block;
+			position: relative;
+			max-width: 950px;
+			margin: 100px auto;
+		}
+
+		@media only screen and (max-width: 1185px) {
+			.contenedor-cursos{
+				max-width: 670px;
+			}
+		}
+
+		@media only screen and (max-width: 880px) {
+			.contenedor-cursos{
+				max-width: 300px;
+			}
+		}
+
+	</style>
+		<div class="contenedor-cursos horizontal layout wrap">
+  			<f-curso></f-curso>
+  			<f-curso></f-curso>
+  			<f-curso></f-curso>
+  			<f-curso></f-curso>
+  			<f-curso></f-curso>
+  			<f-curso></f-curso>
+  			<f-curso></f-curso>
+  			<f-curso></f-curso>
+  			<f-curso></f-curso>
+  			<f-curso></f-curso>
+  		</div>
+
+	</template>
+
+	<script>
+		Polymer({
+			is:'f-cursos'
+		});
+	</script>
+
+</dom-module>

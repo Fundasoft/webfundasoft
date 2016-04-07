@@ -1,0 +1,58 @@
+<dom-module id="f-curso">
+	
+	<template>
+
+	<style>
+
+		:host{
+			display: inline-block;
+			margin: 20px 10px;
+		}
+
+		.titulo{
+			color: #212121;
+			font-size: 20px;
+			font-weight: bold;
+			padding-bottom: 8px;
+		}
+
+		paper-card{
+			width: 284px;
+		}
+
+		.card-content{
+			color: #727272;
+			font-size: 15px;
+		}
+
+		#inscribirse{
+			color: #3498db;
+		}
+
+		@media only screen and (max-width: 640px) {
+
+		}
+
+	</style>
+		<paper-card image="img/js.jpg">
+			<div class="info-curso">
+				<div class="card-content">
+				<div class="titulo">Curso Javascript</div>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua.
+				</div>
+				<div class="card-actions">
+ 					<paper-button id="inscribirse">Inscribirse</paper-button>
+  				</div>
+			</div>
+		</paper-card>
+
+	</template>
+
+	<script>
+		Polymer({
+			is:'f-curso'
+		});
+	</script>
+
+</dom-module>

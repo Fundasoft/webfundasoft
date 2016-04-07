@@ -1,0 +1,110 @@
+<dom-module id="f-noticia">
+	
+	<template>
+
+	<style>
+
+		:host{
+			display: block;
+			margin: 10px 10px;
+		}
+
+		.general{
+			display: block;
+			@apply(--layout-horizontal);
+			padding-bottom: 16px;
+		}
+
+		.poster-texts{
+			padding: 4px;
+		}
+
+		.poster-name{
+			color: color: #212121;
+			font-size: 16px;
+			font-weight: bold;
+		}
+
+		.post-date{
+			color: #A2A2A2;
+			font-size: 14px;
+			font-weight: bold;
+		}
+
+		.imagen{
+			display: inline-block;
+			background-image: url(../../img/news.jpg);
+			background-size: cover;
+			background-position: center;
+			height: 250px;
+		}
+
+		.poster-image{
+			height: 48px;
+			width: 48px;
+			border-radius: 50%;
+			background-position: center;
+			background-size: cover;
+		}
+
+		.titulo{
+			color: #212121;
+			font-size: 24px;
+			font-weight: bold;
+			padding-bottom: 8px;
+		}
+
+		paper-card{
+			@apply(--layout-vertical);
+			width: 100%;
+			height: auto;
+		}
+
+		.card-actions{
+			@apply(--layout-horizontal);
+		}
+
+		paper-icon-button{
+			color: #656565;
+		}
+
+		@media only screen and (max-width: 640px) {
+
+		}
+
+	</style>
+		<paper-card>
+			<div class="card-content">
+				<div class="general">
+					<div class="poster-image" style="background-image: url(../../img/logofunda.jpg);"></div>
+					<div class="poster-texts">
+						<div class="poster-name">Fundasoft</div>
+						<div class="post-date">Agosto 2016</div>
+					</div>
+				</div>
+				<div class="titulo">Este es el titulo de la noticia</div>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</div>
+			<div class="imagen"></div>
+			<div class="card-actions">
+				<paper-icon-button icon="icons:favorite"></paper-icon-button>
+				<paper-icon-button icon="social:share"></paper-icon-button>
+				<div class="flex"></div>
+				<paper-icon-button icon="editor:mode-comment"></paper-icon-button>
+			</div>
+		</paper-card>
+
+	</template>
+
+	<script>
+		Polymer({
+			is:'f-noticia'
+		});
+	</script>
+
+</dom-module>
