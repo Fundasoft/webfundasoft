@@ -7,24 +7,63 @@
 		.contenedor-cursos{
 			display: block;
 			position: relative;
-			max-width: 950px;
-			margin: 100px auto;
+			width: 90%;
+			max-width: 1000px;
+			margin: 100px auto 0 auto;
 		}
 
-		@media only screen and (max-width: 1185px) {
-			.contenedor-cursos{
-				max-width: 670px;
+		.contenedor-cursos-grid{
+			font-size:0;
+		    margin: 0 auto;
+		    width: 1000px;
+		    margin-bottom: 100px;
+		}
+
+		.title{
+			padding: 15px 0 0 0;
+			display: block;
+			font-size: 35px;
+		}
+
+		.resumen{
+			padding: 10px 0 25px 0;
+		    display: block;
+		    font-size: 16px;
+		}
+
+		@media screen and (min-width: 345px) and (max-width: 649px) {
+			.contenedor-cursos-grid{
+				width: 304px;
 			}
 		}
 
-		@media only screen and (max-width: 880px) {
-			.contenedor-cursos{
-				max-width: 300px;
+		@media screen and (min-width: 650px) and (max-width: 954px) {
+			.contenedor-cursos-grid{
+				width: 608px;
+			}
+		}
+
+		@media screen and (min-width: 955px) and (max-width: 1258px){
+			.contenedor-cursos-grid{
+				width: 608px;
+			}
+		}
+
+		@media screen and (min-width: 1259px){
+			.contenedor-cursos-grid{
+				width: 912px;
 			}
 		}
 
 	</style>
-		<div class="contenedor-cursos horizontal layout wrap">
+		<div class="contenedor-cursos">
+			<div class="title">Cursos</div>
+			<div class="resumen">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua.
+			</div>
+		</div>
+		<div class="contenedor-cursos-grid">
   			<f-curso></f-curso>
   			<f-curso></f-curso>
   			<f-curso></f-curso>

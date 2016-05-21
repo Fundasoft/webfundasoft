@@ -1,0 +1,61 @@
+<dom-module id="f-miembro">
+	
+	<template>
+
+	<style>
+
+		:host{
+			display: inline-block;
+			margin: 20px 10px;
+		}
+
+		.titulo{
+			font-size: 20px;
+			font-weight: bold;
+			padding-bottom: 8px;
+		}
+
+		paper-card{
+			width: 284px;
+		}
+
+		.card-content{
+			color: #727272;
+			font-size: 15px;
+			height: 220px;
+
+		}
+
+		#inscribirse{
+			color: #3498db;
+		}
+
+		@media only screen and (max-width: 640px) {
+
+		}
+
+	</style>
+		<paper-card image="img/loguito.jpg">
+			<div class="info-miembro">
+				<div class="card-content">
+				<div class="titulo">Miembro</div>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua.
+					<p class="vertical layout">
+					<span><iron-icon icon="icons:home"></iron-icon><a href="#"> www.loremipsum.com</a></span>
+					<span><iron-icon icon="communication:email"></iron-icon> lorem@ipsum.com</span>
+					<span><iron-icon icon="communication:phone"></iron-icon> +54351447896</span>
+					</p>
+				</div>
+			</div>
+		</paper-card>
+
+	</template>
+
+	<script>
+		Polymer({
+			is:'f-miembro'
+		});
+	</script>
+
+</dom-module>

@@ -1,0 +1,273 @@
+<dom-module id="f-area-redes">
+	
+	<template>
+
+	<style>
+
+		.inside-container{
+			position: relative;
+			width: 95%;
+			max-width: 1000px;
+			margin: 60px auto 0 auto;
+		}
+
+		.inside{
+			display: block;
+			position: relative;
+		}
+
+		.content{
+			padding: 15px 0 0 0;
+		}
+
+		.title{
+			padding: 25px 0 0 25px;
+			display: block;
+			font-size: 35px;
+		}
+
+		.secondary-title{
+			display: block;
+			font-size: 25px;
+			position: relative;
+			width: 95%;
+			max-width: 1000px;
+			margin: 0 auto;
+		}
+
+		.secondary-title div{
+			padding: 25px 0 25px 25px;
+		}
+
+		.resumen{
+			padding: 10px 25px 0 25px;
+		    display: block;
+		    font-size: 16px;
+		}
+
+		.integrantes{
+			padding: 25px 5px 0 35px;
+			display: block;
+		}
+
+		.proyectos{
+			padding: 25px 5px 0 35px;
+			display: block;
+			margin: 0 auto;
+		}
+
+		/*paper-card*/
+
+		paper-card { 
+			@apply(--layout-horizontal);
+			margin: 5px;
+			display: inline-block;
+			width: 160px;
+			color: white;
+		}
+
+		.proyecto-content {
+			@apply(--layout-flex);
+			float: left;
+		}
+
+		.proyecto-header { 
+			@apply(--paper-font-headline);
+		}
+
+		.proyecto-name { 
+			color: white;
+			font-size: 12px;
+			margin: 10px 0;
+		}
+
+		.card-content{
+			height: 130px;
+		}
+
+		paper-button{
+			font-size: 16px;
+		}
+
+		.pink{
+			background-color: var(--paper-pink-500);
+		}
+
+		.blue{
+			background-color: var(--paper-blue-500);
+		}
+
+		.purple{
+			background-color: var(--paper-purple-500);
+		}
+
+		.green{
+			background-color: var(--paper-green-500);
+		}
+
+		.orange{
+			background-color: var(--paper-orange-500);
+		}
+
+		.contenedor-integrantes-grid{
+			font-size:0;
+		    margin: 0 auto;
+		    width: 1000px;
+		}
+
+		.contenedor-proyectos-grid{
+			font-size:0;
+		    margin: 0 auto;
+		    width: 1000px;
+		    margin-bottom: 100px;
+		}
+
+		@media screen and (min-width: 300px) and (max-width: 345px) {
+			.contenedor-integrantes-grid{
+				width: 170px;
+			}
+
+			.contenedor-proyectos-grid{
+				width: 170px;
+			}
+		}
+
+		@media screen and (min-width: 346px) and (max-width: 516px) {
+			.contenedor-integrantes-grid{
+				width: 340px;
+			}
+
+			.contenedor-proyectos-grid{
+				width: 340px;
+			}
+		}
+
+		@media screen and (min-width: 517px) and (max-width: 687px) {
+			.contenedor-integrantes-grid{
+				width: 510px;
+			}
+
+			.contenedor-proyectos-grid{
+				width: 510px;
+			}
+		}
+
+		@media screen and (min-width: 688px) and (max-width: 858px) {
+			.contenedor-integrantes-grid{
+				width: 680px;
+			}
+
+			.contenedor-proyectos-grid{
+				width: 680px;
+			}
+		}
+
+		@media screen and (min-width: 859px) and (max-width: 1129px){
+			.contenedor-integrantes-grid{
+				width: 680px;
+			}
+
+			.contenedor-proyectos-grid{
+				width: 680px;
+			}
+		}
+
+		@media screen and (min-width: 1130px){
+			.contenedor-integrantes-grid{
+				width: 850px;
+			}
+
+			.contenedor-proyectos-grid{
+				width: 850px;
+			}
+		}
+
+	</style>
+		<div class="inside-container" id="container">
+			<div class="inside">
+				<div class="content">
+					<div class="title">Area Redes</div>
+					<div class="resumen">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="secondary-title"><div>Integrantes</div></div>
+		<div class="contenedor-integrantes-grid">
+			<f-integrante name="Gaston Amaya" category="Redes" img="../../img/integrantes/gaston.jpg"></f-integrante>
+		</div>
+		<div class="secondary-title"><div>Proyectos</div></div>
+		<div class="contenedor-proyectos-grid">
+			<paper-card class="pink">
+				<div class="proyecto-content">
+					<div class="card-content">
+						<div class="proyecto-header">Instalacion servidor</div>
+						<div class="proyecto-name">Juan Carlos Sanchez, Gaston Amaya</div>
+					</div>
+					<div class="card-actions">
+						<paper-button>ver</paper-button>
+					</div>
+				</div>
+				<div class="proyecto-image"></div>
+			</paper-card>
+			<paper-card class="purple">
+				<div class="proyecto-content">
+					<div class="card-content">
+						<div class="proyecto-header">Instalacion servidor</div>
+						<div class="proyecto-name">Juan Carlos Sanchez, Gaston Amaya</div>
+					</div>
+					<div class="card-actions">
+						<paper-button>ver</paper-button>
+					</div>
+				</div>
+				<div class="proyecto-image"></div>
+			</paper-card>
+			<paper-card class="blue">
+				<div class="proyecto-content">
+					<div class="card-content">
+						<div class="proyecto-header">Instalacion servidor</div>
+						<div class="proyecto-name">Juan Carlos Sanchez, Gaston Amaya</div>
+					</div>
+					<div class="card-actions">
+						<paper-button>ver</paper-button>
+					</div>
+				</div>
+			</paper-card>
+			<paper-card class="green">
+				<div class="proyecto-content">
+					<div class="card-content">
+						<div class="proyecto-header">Instalacion servidor</div>
+						<div class="proyecto-name">Juan Carlos Sanchez, Gaston Amaya</div>
+					</div>
+					<div class="card-actions">
+						<paper-button>ver</paper-button>
+					</div>
+				</div>
+			</paper-card>
+			<paper-card class="orange">
+				<div class="proyecto-content">
+					<div class="card-content">
+						<div class="proyecto-header">Instalacion servidor</div>
+						<div class="proyecto-name">Juan Carlos Sanchez, Gaston Amaya</div>
+					</div>
+					<div class="card-actions">
+						<paper-button>ver</paper-button>
+					</div>
+				</div>
+			</paper-card>
+		</div>
+	</template>
+
+	<script>
+		Polymer({
+			is:'f-area-redes'
+		});
+	</script>
+
+</dom-module>

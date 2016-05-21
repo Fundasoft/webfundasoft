@@ -1,0 +1,94 @@
+<dom-module id="f-areas">
+	
+	<template>
+
+	<style>
+
+		.contenedor-areas{
+			display: block;
+			position: relative;
+			width: 90%;
+			max-width: 1000px;
+			margin: 100px auto 0 auto;
+		}
+
+		.contenedor-areas-grid{
+			font-size:0;
+		    margin: 0 auto;
+		    width: 1000px;
+		    margin-bottom: 100px;
+		}
+
+		.title{
+			padding: 15px 0 0 0;
+			display: block;
+			font-size: 35px;
+		}
+
+		.resumen{
+			padding: 10px 0 15px 0;
+		    display: block;
+		    font-size: 16px;
+		}
+
+		@media screen and (min-width: 345px) and (max-width: 649px) {
+			.contenedor-areas-grid{
+				width: 304px;
+			}
+		}
+
+		@media screen and (min-width: 650px) and (max-width: 954px) {
+			.contenedor-areas-grid{
+				width: 608px;
+			}
+		}
+
+		@media screen and (min-width: 955px) and (max-width: 1258px){
+			.contenedor-areas-grid{
+				width: 608px;
+			}
+		}
+
+		@media screen and (min-width: 1259px){
+			.contenedor-areas-grid{
+				width: 912px;
+			}
+		}
+
+	</style>
+		<div class="contenedor-areas">
+		<div class="title">Areas</div>
+			<div class="resumen">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.
+			</div>
+		</div>
+		<div class="contenedor-areas-grid">
+			<f-area
+				titulo="Area Programacion"
+				fondo="bck2.jpg"
+				contenido="Aqui desarrollamos tareas de programacion para entornos web, lorem ipsum"
+				link="/area-programacion"></f-area>
+  			<f-area
+  				titulo="Area Electronica"
+  				fondo="bck.jpg"
+  				contenido="Aqui se desarrollan tareas como programacion de microcontroladores, robotica y lorem ipsum."
+  				link="/area-electronica"></f-area>
+  			<f-area
+  				titulo="Area Redes"
+  				fondo="servers.jpg"
+  				contenido="Aqui se desarrollan tareas como gestion de servidores, bases de datos, etc. ah y lorem ipsum."
+  				link="/area-redes"></f-area>
+  		</div>
+
+	</template>
+
+	<script>
+		Polymer({
+			is:'f-areas'
+		});
+	</script>
+
+</dom-module>

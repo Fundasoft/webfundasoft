@@ -1,0 +1,87 @@
+<dom-module id="f-area">
+	
+	<template>
+
+	<style>
+
+		:host{
+			display: inline-block;
+			margin: 20px 10px;
+		}
+
+		.titulo{
+			font-size: 20px;
+			font-weight: bold;
+			padding-bottom: 8px;
+		}
+
+		paper-card{
+			width: 284px;
+		}
+
+		.card-content{
+			font-size: 15px;
+			height: 150px;
+		}
+
+		paper-button{
+			color: #3498db;
+			font-size: 16px !important;
+		}
+
+		@media only screen and (max-width: 640px) {
+
+		}
+
+	</style>
+		<paper-card image="{{bck}}">
+			<div class="info-curso">
+				<div class="card-content">
+				<div class="titulo">{{titulo}}</div>
+				{{contenido}}
+				</div>
+				<div class="card-actions">
+ 					<paper-button on-click="buttonPressed">Visitar</paper-button>
+  				</div>
+			</div>
+		</paper-card>
+
+	</template>
+
+	<script>
+		Polymer({
+			is:'f-area',
+			properties:{
+				fondo:{
+					type: String
+				},
+
+				titulo:{
+					type: String
+				},
+
+				contenido:{
+					type: String
+				},
+
+				link:{
+					type: String
+				},
+
+				bck:{
+					type: String,
+					computed: 'url_imagen(fondo)'
+				}
+			},
+
+			url_imagen: function(url){
+				return './img/'+url;
+			},
+
+			buttonPressed: function(){
+				page(this.link);
+			}
+		});
+	</script>
+
+</dom-module>

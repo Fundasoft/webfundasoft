@@ -1,0 +1,135 @@
+<dom-module id="f-equipo">
+	
+	<template>
+
+	<style>
+
+		.contenedor-equipo{
+			display: block;
+			position: relative;
+			width: 95%;
+			max-width: 1000px;
+			margin: 100px auto 0 auto;
+		}
+
+		.contenedor-equipo-grid{
+			font-size:0;
+		    margin: 0 auto;
+		    width: 1000px;
+		}
+
+		.contenedor-equipo-grid .last{
+			margin-bottom: 100px;
+		}
+
+		.title{
+			padding: 15px 0 0 25px;
+			display: block;
+			font-size: 35px;
+		}
+
+		.secondary-title{
+			display: block;
+			font-size: 25px;
+			position: relative;
+			width: 95%;
+			max-width: 1000px;
+			margin: 0 auto;
+		}
+
+		.secondary-title div{
+			padding: 25px 0 25px 25px;
+		}
+
+		.resumen{
+			padding: 10px 25px 0 25px;
+		    display: block;
+		    font-size: 16px;
+		}
+
+		@media screen and (min-width: 300px) and (max-width: 345px) {
+			.contenedor-equipo-grid{
+				width: 170px;
+			}
+		}
+
+		@media screen and (min-width: 346px) and (max-width: 430px) {
+			.contenedor-equipo-grid{
+				width: 340px;
+			}
+		}
+
+		@media screen and (min-width: 431px) and (max-width: 600px) {
+			.contenedor-equipo-grid{
+				width: 340px;
+			}
+		}
+
+		@media screen and (min-width: 601px) and (max-width: 770px) {
+			.contenedor-equipo-grid{
+				width: 510px;
+			}
+		}
+
+		@media screen and (min-width: 771px) and (max-width: 941px) {
+			.contenedor-equipo-grid{
+				width: 680px;
+			}
+		}
+
+		@media screen and (min-width: 941px) and (max-width: 1130px){
+			.contenedor-equipo-grid{
+				width: 680px;
+			}
+		}
+
+		@media screen and (min-width: 1131px){
+			.contenedor-equipo-grid{
+				width: 850px;
+			}
+		}
+
+	</style>
+		<div class="contenedor-equipo">
+			<div class="title">Equipo</div>
+			<div class="resumen">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</div>
+		</div>
+		<div class="secondary-title"><div>Comision Directiva</div></div>
+		<div class="contenedor-equipo-grid">
+  			<f-integrante name="Juan Carlos Sanchez" category="Director - Backend Developer" img="../../img/integrantes/juank.jpg"></f-integrante>
+			<f-integrante name="Rotharmel Joaquin" category="Secretario - Frontend Developer" img="../../img/integrantes/joa.jpg"></f-integrante>
+			<f-integrante name="Ezequiel Medina" category="Tesorero - Backend Developer" img="../../img/integrantes/eze.jpg"></f-integrante>
+			<f-integrante name="Lucas Alonso" category="Miembro Fundador - Digital Devices" img="../../img/integrantes/lucas.jpg"></f-integrante>
+		</div>
+		<div class="secondary-title"><div>Programacion</div></div>
+		<div class="contenedor-equipo-grid">
+			<f-integrante name="Juan Carlos Sanchez" category="Director - Backend Developer" img="../../img/integrantes/juank.jpg"></f-integrante>
+			<f-integrante name="Rotharmel Joaquin" category="Secretario - Frontend Developer" img="../../img/integrantes/joa.jpg"></f-integrante>
+			<f-integrante name="Ezequiel Medina" category="Tesorero - Backend Developer" img="../../img/integrantes/eze.jpg"></f-integrante>
+			<f-integrante name="Jose Manuel Banda" category="Backend Developer" img="../../img/integrantes/jose.jpg"></f-integrante>
+			<f-integrante name="Elias Suarez" category="Backend Developer" img="../../img/integrantes/elias.jpg"></f-integrante>
+		</div>
+		<div class="secondary-title"><div>Electronica</div></div>
+		<div class="contenedor-equipo-grid">
+			<f-integrante name="Lucas Alonso" category="Miembro Fundador - Digital Devices" img="../../img/integrantes/lucas.jpg"></f-integrante>
+		</div>
+		<div class="secondary-title"><div>Redes</div></div>
+		<div class="contenedor-equipo-grid last">
+			<f-integrante name="Gaston Amaya" category="Redes" img="../../img/integrantes/gaston.jpg"></f-integrante>
+		</div>
+	</template>
+
+	<script>
+		Polymer({
+			is:'f-equipo'
+		});
+	</script>
+
+</dom-module>

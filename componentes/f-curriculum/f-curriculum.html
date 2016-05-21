@@ -1,0 +1,244 @@
+<dom-module id="f-curriculum">
+	
+	<template>
+
+	<style>
+
+		.contenedor-curriculum{
+			max-width: 1000px;
+			margin: 120px auto;
+		}
+
+		.encabezado{
+			display: block;
+			background-color: #FF9800;
+		}
+
+		.contenedor-img{
+			padding: 25px 15px;
+		}
+
+		.img{
+			display: block;
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			margin: 0 auto;
+			height: 140px;
+			width: 140px;
+			border-radius: 50%;
+			background-color: cornflowerblue;
+		}
+
+		.contenedor-datos{
+			padding: 10px 20px 10px 10px;
+			color: #FFFFFF;
+		}
+
+		.nombre{
+			font-size: 28px;
+			font-weight: bold;
+			padding-top: 5px;
+		}
+
+		.categoria{
+			color: #FFC78B;
+			font-size: 12px;
+			padding-bottom: 5px;
+		}
+
+		.resumen{
+			font-size: 14px;
+			padding-bottom: 10px;
+		}
+
+		.mail, .tel{
+			font-size: 13px;
+		}
+
+		.columna-1{
+			display: inline-block;
+			vertical-align: top;
+			width: 45%;
+			padding: 10px;
+		}
+
+		.columna-2{
+			display: inline-block;
+			vertical-align: top;
+			width: 45%;
+			padding: 10px;
+		}
+
+		.contenedor-cuerpo{
+			padding: 15px;
+		}
+
+		.titulo-seccion{
+			font-size: 25px;
+			font-weight: bold;
+			padding-top: 20px;
+		}
+
+		.contenedor-items{
+			padding-left: 0;
+		}
+
+		.item{
+			padding: 5px 0;
+		}
+
+		.titulo-item{
+			color: #F57C00;
+			font-size: 17px;
+			font-weight: bold;
+			padding-bottom: 8px;
+			padding-top: 8px;
+		}
+
+		.porcentaje{
+			padding-left: 6px;
+		}
+
+		.resumen-item{
+			font-size: 14px;
+			padding-left: 30px;
+		}
+
+		paper-progress{
+			padding-top: 8px;
+		}
+
+		paper-progress.black {
+		    --paper-progress-active-color: #2c3e50;
+  		}
+		
+		@media only screen and (max-width: 800px) {
+			.columna-1{
+				display: block;
+				width: 100%;
+			}
+
+			.columna-2{
+				display: block;
+				width: 100%;
+			}
+		}
+
+	</style>
+	<div class="contenedor-curriculum">
+		<paper-card>
+			<div class="encabezado horizontal layout">
+				<div class="contenedor-img">
+					<div class="img" style="{{img}}"></div>
+				</div>
+				<div class="contenedor-datos vertical layout">
+					<div class="nombre">{{data.nombre}}</div>
+					<div class="categoria">{{data.categoria}}</div>
+					<div class="resumen">{{data.resumen}}</div>
+					<div class="mail"><iron-icon icon="communication:email"></iron-icon> {{data.datos.email}}</div>
+					<div class="tel"><iron-icon icon="communication:phone"></iron-icon> {{data.datos.telefono}}</div>
+				</div>
+			</div>
+			<div class="contenedor-cuerpo">
+				<div class="columna-1">
+					<div class="titulo-seccion">Experiencia Laboral</div>
+					<div class="contenedor-items vertical layout">
+						<template is="dom-repeat" items="[[data.experiencia]]">
+							<div class="item">
+								<div class="titulo-item"><iron-icon icon="icons:label"></iron-icon> [[item.titulo]]</div>
+								<div class="resumen-item">[[item.resumen]]</div>
+							</div>
+						</template>
+					</div>
+
+					<div class="titulo-seccion">Educacion</div>
+					<div class="contenedor-items vertical layout">
+						<template is="dom-repeat" items="[[data.educacion]]">
+							<div class="item">
+								<div class="titulo-item"><iron-icon icon="icons:label"></iron-icon> [[item.titulo]]</div>
+								<div class="resumen-item">[[item.resumen]]</div>
+							</div>
+						</template>
+					</div>
+
+					<div class="titulo-seccion">Idiomas</div>
+					<div class="contenedor-items vertical layout">
+						<template is="dom-repeat" items="[[data.idiomas]]">
+							<div class="item">
+								<div class="titulo-item"><iron-icon icon="icons:label"></iron-icon> [[item.titulo]]</div>
+								<div class="resumen-item horizontal layout">
+									<paper-progress value$="[[item.conocimiento]]" max="100" class="black"></paper-progress>
+									<div class="porcentaje">[[item.conocimiento]]%</div>
+								</div>
+							</div>
+						</template>
+					</div>
+
+					<div class="titulo-seccion">Medallas</div>
+					<div class="contenedor-items vertical layout">
+						<div class="item">
+							<div class="titulo-item"></div>
+							<div class="resumen-item"></div>
+						</div>
+					</div>
+				</div>
+				<div class="columna-2">
+					<div class="titulo-seccion">Habilidades</div>
+					<div class="contenedor-items vertical layout">
+						<template is="dom-repeat" items="[[data.habilidades]]">
+							<div class="item">
+								<div class="titulo-item"><iron-icon icon="icons:label"></iron-icon> [[item.titulo]]</div>
+								<div class="resumen-item">[[item.resumen]]</div>
+							</div>
+						</template>
+					</div>
+
+					<div class="titulo-seccion">Varios</div>
+					<div class="contenedor-items vertical layout">
+						<template is="dom-repeat" items="[[data.varios]]">
+							<div class="item">
+								<div class="titulo-item"><iron-icon icon="icons:label"></iron-icon> [[item.titulo]]</div>
+								<div class="resumen-item">[[item.resumen]]</div>
+							</div>
+						</template>
+					</div>
+				</div>
+			</div>
+		</paper-card>
+	</div>
+	</template>
+
+	<script>
+		Polymer({
+			is:'f-curriculum',
+
+			properties:{
+				curriculum:{
+					type:String
+				},
+
+				data:{
+					type:Object
+				},
+
+				img:{
+					type:String,
+					computed: 'giveLink(data)'
+				}
+			},
+
+			giveLink: function(datos){
+				return 'background-image: url(../../img/integrantes/'+datos.imagen+');';
+			},
+
+			ready: function(){
+				var _this = this;
+				readTextFile('../../curriculums/'+this.curriculum, function(text){
+				    _this.data = JSON.parse(text);
+				});
+			}
+		});
+	</script>
+
+</dom-module>

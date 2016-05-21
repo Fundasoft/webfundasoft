@@ -1,0 +1,74 @@
+{
+  "nombre":"Rotharmel Joaquin",
+  "categoria":"Secretario - Frontend Developer",
+  "imagen":"joa.jpg",
+  "resumen":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  "datos":{"telefono":"+543751558146", "direccion":"Av. Velez Sarsfield 811", "email":"diego.rotharmel@gmail.com"},
+	"experiencia":	[
+	  					{
+	  						"titulo":"Zamora Servicios Industriales (2016-2007)",
+	  						"resumen":"Area de automatización, trabajos de automatización y maquinas herramientas, instalaciones eléctricas y mecánicas para el control de procesos en diferentes industrias."
+	  					},
+	  					{
+	  						"titulo":"Freelance (2009-2014)",
+	  						"resumen":"Trabajos realizados en tecnologias como php, html5, css3, Javascript, c++ para empresas comerciales, trabajos de diseño para imagen corporativa."
+	  					},
+	  					{
+	  						"titulo":"Fundasoft (2012-2014)",
+	  						"resumen":"Encargado del area de Diseño y Experiencia de Usuario en Fundasoft Cordoba, desarrollo de multiples proyectos mediante aplicación tecnologias web."
+	  					}
+	  				],
+	"educacion":	[
+	  					{
+	  						"titulo":"Escuela Provincial de Educación Tecnica N°15 (2003-2007)",
+	  						"resumen": "Titulo de Técnico Electromecánico y Bachiller en Producción de Bienes y Servicios"
+	  					},
+	  					{
+	  						"titulo":"Facultad de Ciencias Exactas, Físicas y Naturales (2009-Actualidad)",
+	  						"resumen": "Estudiante de cuarto año de Ingeniería en Computación."
+	  					}
+	  				],
+  	"habilidades":	[
+  						{
+	  						"titulo":"HTML5",
+		  					"resumen": "Nivel Avanzado. 5 años de experiencia."
+	  					},
+	  					{
+	  						"titulo":"CSS3",
+		  					"resumen": "Nivel Avanzado. 5 años de experiencia."
+	  					},
+	  					{
+	  						"titulo":"Javascript",
+		  					"resumen": "Nivel Avanzado. 5 años de experiencia."
+	  					}
+  					],
+  	"idiomas":		[
+  						{
+  							"titulo":"Inglés",
+		  					"conocimiento": 80
+  						},
+  						{
+  							"titulo":"Portugués",
+		  					"conocimiento": 60
+  						},
+  						{
+  							"titulo":"Alemán",
+		  					"conocimiento": 50
+  						}
+  					],
+  	"varios":		[
+  						{
+	  						"titulo":"Creativo",
+		  					"resumen": "Me encanta probar nuevos conceptos, nuevas ideas, siempre siguiendo la tendencia."
+	  					},
+	  					{
+	  						"titulo":"Proactivo",
+		  					"resumen": "Me gusta generar ideas, investigar, explorar nuevas tecnologías, poner a prueba mis ideas, tomo los trabajos como desafios y no los dejo hasta que los termine."
+	  					},
+	  					{
+	  						"titulo":"Responsable",
+		  					"resumen": "Nunca dejo trabajos incompletos, soy apasionado por lo que hago y siempre he sido responsable con mi trabajo."
+	  					}
+  					],
+  	"medallas": 	{ "curso":"true", "charla":"true", "proyecto":"true"}
+}
