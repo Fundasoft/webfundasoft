@@ -14,76 +14,78 @@
 	<link rel="import" href="elements.html">
 
 </head>
-<body class="fullbleed layout vertical">
+<body class="layout vertical">
 
-<paper-drawer-panel responsive-width="1000px">
-	<paper-header-panel drawer>
-	    <paper-toolbar id="drawer-toolbar">
+	<app-drawer-layout responsive-width="1000px" fullbleed>
+  <app-drawer swipe-open>
+		<app-toolbar id="drawer-toolbar">
 			<img src="img/logo.png" class="logo" id="logo-drawer"><div class="letra-fundasoft" id="letra-drawer">Fundasoft</div>
-		</paper-toolbar>
-	    <paper-menu>
-	      <paper-item onclick="page('/'); closeDrawer();"><iron-icon icon="icons:home" class="indigo"></iron-icon> Inicio</paper-item>
-          <paper-item onclick="page('/noticias'); closeDrawer();"><iron-icon icon="icons:star" class="yellow"></iron-icon> Noticias</paper-item>
-          <paper-item onclick="page('/galeria'); closeDrawer();"><iron-icon icon="maps:local-see" class="purple"></iron-icon> Galeria</paper-item>
-          <paper-submenu>
-            <paper-item class="menu-trigger"><iron-icon icon="social:group" class="orange"></iron-icon> Nosotros</paper-item>
-            <paper-menu class="menu-content sublist">
-                <paper-item onclick="page('/fundacion'); closeDrawer();"> La fundacion</paper-item>
-        		<paper-item onclick="page('/equipo'); closeDrawer();"> Equipo</paper-item>
-        		<paper-item onclick="page('/miembros'); closeDrawer();"> Miembros</paper-item>
-        		<paper-item onclick="page('/mentores'); closeDrawer();"> Mentores</paper-item>
-        		<paper-item onclick="page('/areas'); closeDrawer();"> Areas</paper-item>
-          </paper-submenu>
-          <paper-submenu>
-            <paper-item class="menu-trigger"><iron-icon icon="icons:favorite" class="pink"></iron-icon> Actividad</paper-item>
-            <paper-menu class="menu-content sublist">
-                <paper-item onclick="page('/cursos'); closeDrawer();"> Cursos</paper-item>
-        		<paper-item> Eventos</paper-item>
-        		<paper-item> Charlas</paper-item>
-          </paper-submenu>
-          <paper-item><iron-icon icon="icons:mail" class="bluegrey"></iron-icon> Contacto</paper-item>
-        </paper-menu>
-  	</paper-header-panel>
+		</app-toolbar>
+		<paper-menu>
+			<paper-item onclick="page('/'); closeDrawer();"><iron-icon icon="icons:home" class="indigo"></iron-icon> Inicio</paper-item>
+				<paper-item onclick="page('/noticias'); closeDrawer();"><iron-icon icon="icons:star" class="yellow"></iron-icon> Noticias</paper-item>
+				<paper-item onclick="page('/galeria'); closeDrawer();"><iron-icon icon="maps:local-see" class="purple"></iron-icon> Galeria</paper-item>
+				<paper-submenu>
+					<paper-item class="menu-trigger"><iron-icon icon="social:group" class="orange"></iron-icon> Nosotros</paper-item>
+					<paper-menu class="menu-content sublist">
+							<paper-item onclick="page('/fundacion'); closeDrawer();"> La fundacion</paper-item>
+					<paper-item onclick="page('/equipo'); closeDrawer();"> Equipo</paper-item>
+					<paper-item onclick="page('/miembros'); closeDrawer();"> Miembros</paper-item>
+					<paper-item onclick="page('/mentores'); closeDrawer();"> Mentores</paper-item>
+					<paper-item onclick="page('/areas'); closeDrawer();"> Areas</paper-item>
+				</paper-submenu>
+				<paper-submenu>
+					<paper-item class="menu-trigger"><iron-icon icon="icons:favorite" class="pink"></iron-icon> Actividad</paper-item>
+					<paper-menu class="menu-content sublist">
+							<paper-item onclick="page('/cursos'); closeDrawer();"> Cursos</paper-item>
+					<paper-item> Eventos</paper-item>
+					<paper-item> Charlas</paper-item>
+				</paper-submenu>
+				<paper-item><iron-icon icon="icons:mail" class="bluegrey"></iron-icon> Contacto</paper-item>
+			</paper-menu>
+  </app-drawer>
+  <app-header-layout>
+		<app-toolbar id="main-toolbar">
+				<paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+				<div title>
+					<img src="img/logo.png" class="logo" id="logo-main"><div class="letra-fundasoft" id="letra-main">Fundasoft</div>
+				</div>
+		</app-toolbar>
 
-	<paper-header-panel mode="seamed" main>
+		<div class="content">
+			<template id="pages" is="dom-bind">
+					<iron-pages class="flex" selected="{{route}}" attr-for-selected="data-route">
+						<f-inicio data-route="inicio"></f-inicio>
+						<f-cursos data-route="cursos"></f-cursos>
+						<f-noticias data-route="noticias"></f-noticias>
+						<f-galeria data-route="galeria"></f-galeria>
+						<f-areas data-route="areas"></f-areas>
+						<f-fundacion data-route="fundacion"></f-fundacion>
+						<f-equipo data-route="equipo"></f-equipo>
+						<f-mentores data-route="mentores"></f-mentores>
+						<f-miembros data-route="miembros"></f-miembros>
+						<f-area-programacion data-route="area-programacion"></f-area-programacion>
+						<f-area-electronica data-route="area-electronica"></f-area-electronica>
+						<f-area-redes data-route="area-redes"></f-area-redes>
+						<f-curriculum curriculum="curriculum-joa.json" data-route="rotharmel-joaquin"></f-curriculum>
+						<f-curriculum curriculum="curriculum-juan.json" data-route="juan-carlos-sanchez"></f-curriculum>
+				</iron-pages>
+			</template>
+		</div>
 
-	<paper-toolbar id="main-toolbar">
-		<paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
-		<img src="img/logo.png" class="logo" id="logo-main"><div class="letra-fundasoft" id="letra-main">Fundasoft</div>
-	</paper-toolbar>
-  	
-	<div class="content">
-		<template id="pages" is="dom-bind">
-	    	<iron-pages class="flex" selected="{{route}}" attr-for-selected="data-route">
-		  		<f-inicio data-route="inicio"></f-inicio>
-		  		<f-cursos data-route="cursos"></f-cursos>
-		  		<f-noticias data-route="noticias"></f-noticias>
-		  		<f-galeria data-route="galeria"></f-galeria>
-		  		<f-areas data-route="areas"></f-areas>
-		  		<f-fundacion data-route="fundacion"></f-fundacion>
-		  		<f-equipo data-route="equipo"></f-equipo>
-		  		<f-mentores data-route="mentores"></f-mentores>
-		  		<f-miembros data-route="miembros"></f-miembros>
-		  		<f-area-programacion data-route="area-programacion"></f-area-programacion>
-		  		<f-area-electronica data-route="area-electronica"></f-area-electronica>
-		  		<f-area-redes data-route="area-redes"></f-area-redes>
-		  		<f-curriculum curriculum="curriculum-joa.json" data-route="rotharmel-joaquin"></f-curriculum>
-		  		<f-curriculum curriculum="curriculum-juan.json" data-route="juan-carlos-sanchez"></f-curriculum>
-			</iron-pages>
-		</template>
-	</div>
-
-	</paper-header-panel>
-</paper-drawer-panel>
+  </app-header-layout>
+</app-drawer-layout>
 
 <script>
 	function interfaceChanger(){
-		if(!document.querySelector('paper-drawer-panel').narrow){
+		if(!document.querySelector('app-drawer-layout').narrow){
 			document.getElementById('main-toolbar').style.display = 'none';
-			document.getElementById('logo-drawer').style.display = 'block';
-			document.getElementById('letra-drawer').style.display = 'block';
+			document.getElementById('logo-drawer').style.display = 'inline-block';
+			document.getElementById('letra-drawer').style.display = 'inline-block';
 		} else{
-			document.getElementById('main-toolbar').style.display = 'block';
+			document.getElementById('main-toolbar').style.display = 'flex';
+			document.getElementById('logo-main').style.display = 'inline-block';
+			document.getElementById('letra-main').style.display = 'inline-block';
 			document.getElementById('logo-drawer').style.display = 'none';
 			document.getElementById('letra-drawer').style.display = 'none';
 		}
@@ -96,99 +98,99 @@
 	window.onresize = interfaceChanger;
 
 	function scrollHandler(){
-		var scroll = document.getElementById('mainContainer').scrollTop;
-        document.querySelector('paper-toolbar').style.backgroundColor = "rgba(63,81,181,"+(scroll*0.002)+")";
+			var scroll = document.body.scrollTop;
+      document.getElementById('main-toolbar').style.backgroundColor = "rgba(63,81,181,"+(scroll*0.002)+")";
 	}
 
 	var pages = document.getElementById('pages');
 
 	page('/', function(){
 		pages.route = 'inicio';
-		document.getElementById('mainContainer').addEventListener('scroll', scrollHandler);
+		document.addEventListener('scroll', scrollHandler);
 		document.getElementById('main-toolbar').style.backgroundColor = "rgba(63,81,181,0)";
 		document.querySelector('meta[name=theme-color]').content = '#5C6BC0';
 	});
 
 	page('/cursos', function(){
 		pages.route = 'cursos';
-		document.getElementById('mainContainer').removeEventListener('scroll', scrollHandler);
+			document.removeEventListener('scroll', scrollHandler);
 		document.getElementById('main-toolbar').style.backgroundColor = "rgba(216,27,96,1)";
 		document.querySelector('meta[name=theme-color]').content = '#D81B60';
 	});
 
 	page('/noticias', function(){
 		pages.route = 'noticias';
-		document.getElementById('mainContainer').removeEventListener('scroll', scrollHandler);
+			document.removeEventListener('scroll', scrollHandler);
 		document.getElementById('main-toolbar').style.backgroundColor = "rgba(192,202,51,1)";
 		document.querySelector('meta[name=theme-color]').content = '#C0CA33';
 	});
 
 	page('/galeria', function(){
 		pages.route = 'galeria';
-		document.getElementById('mainContainer').removeEventListener('scroll', scrollHandler);
+			document.removeEventListener('scroll', scrollHandler);
 		document.getElementById('main-toolbar').style.backgroundColor = "rgba(155,89,182,1)";
 		document.querySelector('meta[name=theme-color]').content = '#9b59b6';
 	});
 
 	page('/areas', function(){
 		pages.route = 'areas';
-		document.getElementById('mainContainer').removeEventListener('scroll', scrollHandler);
+			document.removeEventListener('scroll', scrollHandler);
 		document.getElementById('main-toolbar').style.backgroundColor = "rgba(255,87,34,1)";
 		document.querySelector('meta[name=theme-color]').content = '#FF5722';
 	});
 
 	page('/area-programacion', function(){
 		pages.route = 'area-programacion';
-		document.getElementById('mainContainer').removeEventListener('scroll', scrollHandler);
+			document.removeEventListener('scroll', scrollHandler);
 		document.getElementById('main-toolbar').style.backgroundColor = "rgba(255,87,34,1)";
 		document.querySelector('meta[name=theme-color]').content = '#FF5722';
 	});
 
 	page('/area-electronica', function(){
 		pages.route = 'area-electronica';
-		document.getElementById('mainContainer').removeEventListener('scroll', scrollHandler);
+			document.removeEventListener('scroll', scrollHandler);
 		document.getElementById('main-toolbar').style.backgroundColor = "rgba(255,87,34,1)";
 		document.querySelector('meta[name=theme-color]').content = '#FF5722';
 	});
 
 	page('/area-redes', function(){
 		pages.route = 'area-redes';
-		document.getElementById('mainContainer').removeEventListener('scroll', scrollHandler);
+			document.removeEventListener('scroll', scrollHandler);
 		document.getElementById('main-toolbar').style.backgroundColor = "rgba(255,87,34,1)";
 		document.querySelector('meta[name=theme-color]').content = '#FF5722';
 	});
 
 	page('/equipo', function(){
 		pages.route = 'equipo';
-		document.getElementById('mainContainer').removeEventListener('scroll', scrollHandler);
+			document.removeEventListener('scroll', scrollHandler);
 		document.getElementById('main-toolbar').style.backgroundColor = "rgba(255,87,34,1)";
 		document.querySelector('meta[name=theme-color]').content = '#FF5722';
 	});
 
 	page('/fundacion', function(){
 		pages.route = 'fundacion';
-		document.getElementById('mainContainer').removeEventListener('scroll', scrollHandler);
+			document.removeEventListener('scroll', scrollHandler);
 		document.getElementById('main-toolbar').style.backgroundColor = "rgba(255,87,34,1)";
 		document.querySelector('meta[name=theme-color]').content = '#FF5722';
 	});
 
 	page('/mentores', function(){
 		pages.route = 'mentores';
-		document.getElementById('mainContainer').removeEventListener('scroll', scrollHandler);
+			document.removeEventListener('scroll', scrollHandler);
 		document.getElementById('main-toolbar').style.backgroundColor = "rgba(255,87,34,1)";
 		document.querySelector('meta[name=theme-color]').content = '#FF5722';
 	});
 
 	page('/miembros', function(){
 		pages.route = 'miembros';
-		document.getElementById('mainContainer').removeEventListener('scroll', scrollHandler);
+			document.removeEventListener('scroll', scrollHandler);
 		document.getElementById('main-toolbar').style.backgroundColor = "rgba(255,87,34,1)";
 		document.querySelector('meta[name=theme-color]').content = '#FF5722';
 	});
 
 	page('/curriculum/:integrante', function(data){
 		pages.route = data.params.integrante;
-		document.getElementById('mainContainer').removeEventListener('scroll', scrollHandler);
+			document.removeEventListener('scroll', scrollHandler);
 		document.getElementById('main-toolbar').style.backgroundColor = "rgba(255,87,34,1)";
 		document.querySelector('meta[name=theme-color]').content = '#FF5722';
 	});
@@ -196,7 +198,9 @@
 	page({hashbang:true});
 
 	function closeDrawer(){
-		document.querySelector('paper-drawer-panel').closeDrawer()
+		if(document.querySelector('app-drawer-layout').narrow){
+			document.querySelector('app-drawer').close();
+		}
 	}
 
 </script>

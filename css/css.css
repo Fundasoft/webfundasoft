@@ -1,6 +1,8 @@
 body{
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	color: #212121;
+	background-color: #FAFAFA;
+	margin: 0;
 }
 
 a{

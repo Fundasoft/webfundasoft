@@ -29,7 +29,7 @@ a{
 	color: #fff;
 }
 
-paper-toolbar{
+app-toolbar{
 	color: white;
 	z-index: 2;
 }
@@ -44,24 +44,12 @@ paper-icon-button{
 
 #main-toolbar{
 	background-color: rgba(0,0,0,0);
-	box-shadow: none;
+	position: fixed;
+	width: 100%;
 }
 
 #drawer-toolbar{
 	background-color: #2c3e50;
-}
-
-paper-header-panel[main]::shadow #mainContainer{
-    margin-top: -95px;
-    background-color: #FAFAFA;
-}
-
-paper-header-panel[drawer]::shadow #dropShadow{
-   	box-shadow: none;
-}
-
-paper-header-panel[drawer]{
-	background-color: #212121;
 }
 
 .yellow{
@@ -95,6 +83,7 @@ paper-header-panel[drawer]{
 paper-menu{
 	color: #fff;
 	background-color: #212121;
+	height: 100%;
 }
 
 .sublist{
@@ -113,9 +102,15 @@ iron-icon{
 	margin-right: 8px;
 }
 
+iron-pages{
+	height: 100%;
+}
+
 .letra-fundasoft{
 	font-family: 'designosaur-italic';
 	font-size: 28px;
+	vertical-align: top;
+  padding-top: 6px;
 }
 
 </style>

@@ -1,12 +1,13 @@
 <dom-module id="f-curriculum">
-	
+
 	<template>
 
 	<style>
 
 		.contenedor-curriculum{
 			max-width: 1000px;
-			margin: 120px auto;
+			padding-top: 120px;
+			margin: 0 auto;
 		}
 
 		.encabezado{
@@ -112,7 +113,7 @@
 		paper-progress.black {
 		    --paper-progress-active-color: #2c3e50;
   		}
-		
+
 		@media only screen and (max-width: 800px) {
 			.columna-1{
 				display: block;
@@ -126,7 +127,7 @@
 		}
 
 	</style>
-	<div class="contenedor-curriculum">
+	<div class="contenedor-curriculum" style="display:none;"><!-- BUG VISUAL SCROLL-X -->
 		<paper-card>
 			<div class="encabezado horizontal layout">
 				<div class="contenedor-img">

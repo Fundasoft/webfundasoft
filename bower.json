@@ -44,7 +44,8 @@
     "page": "visionmedia/page.js#^1.6.4",
     "paper-slider": "PolymerElements/paper-slider#^1.0.10",
     "iron-pages": "PolymerElements/iron-pages#^1.0.7",
-    "paper-progress": "PolymerElements/paper-progress#^1.0.9"
+    "paper-progress": "PolymerElements/paper-progress#^1.0.9",
+    "app-layout": "PolymerElements/app-layout#^0.9.1"
   },
   "resolutions": {
     "paper-styles": "^1.1.0",
